@@ -1,0 +1,15 @@
+.git
+.env*
+.venv
+node_modules
+frontend
+runtime
+vault
+users
+*.log
+__pycache__
+.pytest_cache
+.hermes
+deployment/linux/secrets
+deployment/linux/backups
+deployment/linux/.env

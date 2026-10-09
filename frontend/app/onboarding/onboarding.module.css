@@ -1,0 +1,239 @@
+.page {
+  min-height: 100dvh;
+  background: var(--color-background);
+  color: var(--color-dark);
+  font-family: var(--font-body);
+}
+
+.shell {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: min(100%, 640px);
+  min-height: 100dvh;
+  margin-inline: auto;
+  padding: clamp(24px, 4vw, 42px) clamp(20px, 5vw, 36px) 24px;
+}
+
+.header {
+  display: grid;
+  gap: 18px;
+}
+
+.headerTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 44px;
+}
+
+.back,
+.backSpace {
+  width: 44px;
+  height: 44px;
+}
+
+.back {
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 14px;
+  background: transparent;
+  color: var(--color-dark);
+  cursor: pointer;
+}
+
+.back:hover { background: var(--color-cream); }
+
+.stepCount {
+  color: color-mix(in srgb, var(--color-dark) 62%, transparent);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.progress {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 6px;
+  width: 100%;
+}
+
+.progress span {
+  height: 6px;
+  border-radius: 99px;
+  background: color-mix(in srgb, var(--color-dark) 14%, transparent);
+}
+
+.progress .progressFilled { background: var(--color-orange); }
+
+.content {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding-block: clamp(40px, 9vh, 84px);
+}
+
+.questionPanel,
+.summary { width: 100%; }
+
+.title {
+  margin: 0;
+  font-size: clamp(32px, 5vw, 46px);
+  font-weight: 850;
+  letter-spacing: -.045em;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.answerArea { margin-top: 34px; }
+
+.choiceList { display: grid; gap: 12px; }
+
+.choice,
+.chip,
+.textInput {
+  border: 2px solid color-mix(in srgb, var(--color-dark) 13%, transparent);
+  background: #fffdf9;
+  color: var(--color-dark);
+  font: inherit;
+}
+
+.choice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  min-height: 68px;
+  width: 100%;
+  border-radius: 19px;
+  padding: 14px 20px;
+  font-size: clamp(16px, 2vw, 18px);
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color .15s, border-color .15s, transform .15s;
+}
+
+.choice:hover,
+.chip:hover { border-color: var(--color-orange); }
+
+.choice:active,
+.chip:active { transform: scale(.99); }
+
+.selected {
+  border-color: var(--color-orange);
+  background: var(--color-cream);
+}
+
+.selected svg { color: var(--color-orange); flex: 0 0 auto; }
+
+.toneChoice { min-height: 88px; }
+
+.toneCopy { display: grid; gap: 3px; }
+.toneCopy strong { font-weight: 800; }
+.toneCopy span { color: color-mix(in srgb, var(--color-dark) 68%, transparent); font-size: 14px; font-weight: 500; }
+
+.chipGrid { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  max-width: 100%;
+  border-radius: 14px;
+  padding: 10px 17px;
+  font-size: 16px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color .15s, border-color .15s, transform .15s;
+}
+
+.customChip { gap: 6px; }
+.removeChip { display: grid; place-items: center; width: 32px; height: 32px; border: 0; border-radius: 8px; background: transparent; color: var(--color-dark); cursor: pointer; }
+
+.textInput {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 66px;
+  border-radius: 19px;
+  padding: 14px 19px;
+  font-size: 18px;
+  font-weight: 600;
+  outline: none;
+}
+
+.textInput::placeholder { color: color-mix(in srgb, var(--color-dark) 46%, transparent); }
+.textInput:focus { border-color: var(--color-orange); }
+
+.otherForm { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; width: 100%; }
+.otherForm .textInput { flex: 1 1 220px; }
+.smallButton { min-height: 54px; border: 0; border-radius: 16px; padding: 0 20px; background: var(--color-dark); color: var(--color-white); font: inherit; font-weight: 800; cursor: pointer; }
+.smallButton:disabled { opacity: .4; cursor: not-allowed; }
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 64px;
+}
+
+.skip { min-width: 64px; min-height: 48px; border: 0; border-radius: 12px; background: transparent; color: color-mix(in srgb, var(--color-dark) 70%, transparent); font: inherit; font-size: 16px; font-weight: 700; cursor: pointer; }
+.skip:hover { color: var(--color-dark); background: var(--color-cream); }
+
+.primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  min-width: 168px;
+  border: 0;
+  border-radius: 17px;
+  padding: 12px 24px;
+  background: var(--color-dark);
+  box-shadow: 0 4px 0 color-mix(in srgb, var(--color-dark) 28%, transparent);
+  color: var(--color-white);
+  font: inherit;
+  font-size: 17px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.primary:hover { background: color-mix(in srgb, var(--color-dark) 88%, var(--color-orange)); }
+.primary:active { transform: translateY(2px); box-shadow: 0 2px 0 color-mix(in srgb, var(--color-dark) 28%, transparent); }
+.primary:disabled { opacity: .45; box-shadow: none; cursor: not-allowed; }
+
+.welcome { display: grid; justify-items: center; gap: 26px; text-align: center; }
+.welcomeMascot { position: relative; width: clamp(180px, 43vw, 270px); aspect-ratio: 1; }
+.welcomeHalo { position: absolute; inset: 7%; border-radius: 50%; background: var(--color-cream); }
+.welcomeMascot img { position: relative; display: block; width: 100%; height: 100%; object-fit: contain; }
+.welcomeCopy { display: grid; justify-items: center; gap: 10px; }
+.welcomeCopy .title { max-width: 12ch; }
+.welcomeCopy p { margin: 0; color: color-mix(in srgb, var(--color-dark) 68%, transparent); font-size: 18px; font-weight: 600; }
+.welcome .primary { width: 100%; }
+
+.error { width: 100%; margin: 0; color: #a73720; font-size: 14px; font-weight: 650; }
+
+.back:focus-visible,
+.choice:focus-visible,
+.chip:focus-visible,
+.removeChip:focus-visible,
+.smallButton:focus-visible,
+.skip:focus-visible,
+.primary:focus-visible { outline: 3px solid var(--color-orange); outline-offset: 3px; }
+
+@media (max-width: 480px) {
+  .shell { padding-inline: 20px; }
+  .content { padding-block: 36px; }
+  .answerArea { margin-top: 28px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .choice, .chip { transition: none; }
+}

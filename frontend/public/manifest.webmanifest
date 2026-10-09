@@ -1,0 +1,10 @@
+{
+  "name": "Pixie Demo - Study Partner",
+  "short_name": "Pixie Demo",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f4ed",
+  "theme_color": "#f5f4ed",
+  "description": "A patient study partner that learns how you think.",
+  "icons": []
+}

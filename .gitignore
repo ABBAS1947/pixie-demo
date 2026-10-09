@@ -1,0 +1,34 @@
+# Credentials and runtime/user content
+.env
+.env.*
+!.env.example
+!**/.env.example
+!**/.env.local.example
+*.pem
+*.key
+*.p12
+*.pfx
+*credentials*.json
+*service-account*.json
+token_tmp.txt
+runtime/
+vault/
+users/
+backups/
+*.db
+*.sqlite*
+*.log
+# Local dependencies and build output
+.venv/
+venv/
+node_modules/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.next/
+.next-build/
+out/
+build/
+dist/
+*.tsbuildinfo
+.DS_Store
